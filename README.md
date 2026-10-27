@@ -1,13 +1,14 @@
-# Algorithm Race
+# Algorithm Race Visualiser
 
 A side-by-side terminal visualizer and benchmarking tool for classic sorting and searching algorithms, implemented in pure Java.
 
 Algorithm Race renders multi-panel ASCII animations in real time, illustrating how different algorithms operate on identical datasets before evaluating their performance through micro-benchmarks.
 
-![Algorithm Race Demo](docs/showcase.gif)
+---
 
-> [!TIP]
-> A high-resolution video is also available in MP4 format at [docs/showcase.mp4](docs/showcase.mp4).
+## Showcase
+
+https://github.com/user-attachments/assets/60a2e828-0fcb-4792-b503-4bb7d2ccbecf
 
 ---
 
@@ -45,6 +46,27 @@ The application demonstrates algorithm behavior across two distinct phases:
 
 ---
 
+## Project Structure
+
+```
+algorithmrace/
+├── src/
+│   └── algorithmrace/
+│       ├── AlgorithmRace.java   # Main entry point and CLI coordinator
+│       ├── Race.java            # Algorithm logic, generator, and frame recorder
+│       ├── Visualizer.java      # Terminal renderer and ANSI chart engine
+│       ├── Report.java          # Benchmark runner (n=1200) and reporter
+│       └── Text.java            # ANSI styling, colors, and NO_COLOR support
+├── docs/
+│   ├── showcase.mp4             # High-definition video demonstration
+│   └── screenshots/             # High-resolution stage captures
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -54,20 +76,14 @@ The application demonstrates algorithm behavior across two distinct phases:
 
 ### Compilation & Execution
 
-#### From the parent directory:
-```bash
-# Compile all source files
-javac algorithmrace/*.java
+Compile all source files into a `bin/` directory and run the application:
 
-# Run the application
-java algorithmrace.AlgorithmRace
-```
-
-#### From inside the project directory:
 ```bash
-# Compile and run with package classpath
-javac -d .. *.java
-java -cp .. algorithmrace.AlgorithmRace
+# Compile
+javac -d bin src/algorithmrace/*.java
+
+# Run
+java -cp bin algorithmrace.AlgorithmRace
 ```
 
 ### Configuration Options
@@ -78,32 +94,24 @@ Upon startup, the program prompts for dataset parameters:
 
 To run in monochrome mode, set `NO_COLOR`:
 ```bash
-NO_COLOR=1 java algorithmrace.AlgorithmRace
+NO_COLOR=1 java -cp bin algorithmrace.AlgorithmRace
 ```
 
 ---
 
 ## Contributing
 
-Contributions are welcome! If you would like to help improve Algorithm Race or implement additional algorithms (such as QuickSort, MergeSort, or Exponential Search), feel free to contribute:
-
-1. **Fork** the repository.
-2. **Create** a feature branch (`git checkout -b feature/new-algorithm`).
-3. **Commit** your changes (`git commit -m 'Add MergeSort visualization'`).
-4. **Push** to the branch (`git push origin feature/new-algorithm`).
-5. **Open a Pull Request**.
-
-Please ensure that any new algorithms adhere to the existing [`Race`](file:///home/cresol/Documents/algorithmrace/Race.java) instrumentation model (tracking comparisons, swaps, and probes).
+Contributions and pull requests are welcome. If you would like to add more algorithms or suggest improvements, feel free to submit a pull request directly.
 
 ### Contributors
 
-Thanks to everyone who has contributed to this project:
-
-<!-- Add your GitHub username below when contributing -->
-- [@cresol](https://github.com/cresol) — *Author and maintainer*
+- [@ashwarth-vsv](https://github.com/ashwarth-vsv) — Sorting and searching algorithm implementations
+- [@siddarthsc10-cloud](https://github.com/siddarthsc10-cloud) — Benchmarking engine and performance reporting (`Report.java`)
 
 ---
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the [MIT License](LICENSE).
+
+**AI Disclosure**: Portions of the Java source code were developed with AI pair-programming assistance. All implementations have been reviewed and verified by the maintainer.
