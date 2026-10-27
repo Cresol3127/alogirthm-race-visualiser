@@ -11,8 +11,8 @@ import java.util.Scanner;
  * A simple ASCII visualiser that races three sorting algorithms on the same
  * data, then races three search algorithms on the sorted result.
  *
- * Compile: javac algorithmrace/*.java
- * Run:     java algorithmrace.AlgorithmRace
+ * Compile: javac -d bin src/algorithmrace/*.java
+ * Run:     java -cp bin algorithmrace.AlgorithmRace
  */
 public class AlgorithmRace {
 
